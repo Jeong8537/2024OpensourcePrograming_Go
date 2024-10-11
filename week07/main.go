@@ -1,14 +1,29 @@
 package main
 
+import (
+	"bufio"
+	"fmt"
+	"log"
+	"os"
+	"strconv"
+	"strings"
+)
+
 func main() {
-	// Shadowing Problem
+	fmt.Print("정수 입력 : ")
+	in := bufio.NewReader(os.Stdin)
+	score, err := in.ReadString('\n')
 
-	// var float32 float32 = 9.1
-	// fmt.Println(float32)
+	if err != nil {
+		log.Fatal(err)
+	}
+	// fmt.Print(strings.TrimSpace(score))
+	score = strings.TrimSpace(score)              // \n, tab, space remove
+	realScore, _ := strconv.ParseFloat(score, 64) // float64 type => str type change
 
-	// var number float32
-	// fmt.Println(number)
-
-	// var fmt float32 = 9.1
-	// fmt.Println(float32)
+	if realScore >= 90 {
+		fmt.Println("A")
+	} else {
+		fmt.Println("BCDF")
+	}
 }
