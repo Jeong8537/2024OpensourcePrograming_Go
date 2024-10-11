@@ -20,13 +20,13 @@ func main() {
 	}
 	// fmt.Print(strings.TrimSpace(score))
 	score = strings.TrimSpace(score)                // \n, tab, space remove
-	realScore, _ := strconv.ParseInt(score, 16, 32) // int32 type <= str type change
+	realScore, _ := strconv.ParseInt(score, 10, 32) // int32 type <= str type change
 
-	if realScore >= 60 {
-		fmt.Println("A")
-		fmt.Printf("%d\n", realScore)
+	var grade string
+	if realScore >= 90 {
+		grade = ("A")
 	} else {
-		fmt.Println("BCDF")
-		fmt.Printf("%d\n", realScore)
+		grade = ("BCDF")
 	}
+	fmt.Printf("%d점은 %s등급 입니다\n", realScore, grade)
 }
