@@ -10,6 +10,7 @@ import (
 )
 
 func main() {
+	//var realScore int32
 	fmt.Print("정수 입력 : ")
 	in := bufio.NewReader(os.Stdin)
 	score, err := in.ReadString('\n')
@@ -18,12 +19,14 @@ func main() {
 		log.Fatal(err)
 	}
 	// fmt.Print(strings.TrimSpace(score))
-	score = strings.TrimSpace(score)              // \n, tab, space remove
-	realScore, _ := strconv.ParseFloat(score, 64) // float64 type => str type change
+	score = strings.TrimSpace(score)                // \n, tab, space remove
+	realScore, _ := strconv.ParseInt(score, 16, 32) // int32 type <= str type change
 
-	if realScore >= 90 {
+	if realScore >= 60 {
 		fmt.Println("A")
+		fmt.Printf("%d\n", realScore)
 	} else {
 		fmt.Println("BCDF")
+		fmt.Printf("%d\n", realScore)
 	}
 }
