@@ -1,13 +1,15 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
-	"strings"
+	"os"
 )
 
 func main() {
-	var hello string = "He##o, wor#d!"
-	helloFixed := strings.NewReplacer("#", "l")
-	fmt.Println(hello)
-	fmt.Println(helloFixed.Replace(hello))
+	fmt.Print("이름 입력 : ")
+	in := bufio.NewReader(os.Stdin)
+	name, err := in.ReadString('\n') // '' <- rune
+	fmt.Println(name)
+	fmt.Println(err)
 }
