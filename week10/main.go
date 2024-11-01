@@ -29,9 +29,13 @@ func main() {
 	var isPrime bool = true
 	if n <= 1 {
 		isPrime = false
+	} else if n == 2 {
+		isPrime = true
+	} else if n%2 == 0 { // Among even number, only 2 is Prime Number
+		isPrime = false
 	} else {
-		i := 2
-		//for i < n {
+		i := 3
+		// for i < n {
 		// for i < int(math.Sqrt(float64(n))) { // Error
 		// for i <= int(math.Sqrt(float64(n))) { == Same as current code
 
@@ -41,7 +45,8 @@ func main() {
 				break // first divisor, loop break
 			}
 			fmt.Printf("%d ", i)
-			i++
+			// i++
+			i = i + 2
 		}
 	}
 
