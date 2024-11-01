@@ -25,16 +25,21 @@ func main() {
 	}
 
 	counts := 0
-	i := 2
-	for i < n {
-		if n%i == 0 {
-			counts = counts + 1
-		}
-		i++
-	}
-	if counts == 0 {
-		fmt.Printf("%d is a primeNumber.", n)
+	if n <= 1 {
+		counts = -1
 	} else {
-		fmt.Printf("%d not a primeNumber.", n)
+		i := 2
+		for i < n {
+			if n%i == 0 {
+				counts = counts + 1
+			}
+			i++
+		}
+	}
+
+	if counts == 0 {
+		fmt.Printf("%d is a Prime Number.", n)
+	} else {
+		fmt.Printf("%d not a Prime Number.", n)
 	}
 }
