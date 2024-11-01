@@ -4,7 +4,6 @@ import (
 	"bufio"
 	"fmt"
 	"log"
-	"math"
 	"os"
 	"strconv"
 	"strings"
@@ -37,9 +36,10 @@ func main() {
 		i := 3
 		// for i < n {
 		// for i < int(math.Sqrt(float64(n))) { // Error
-		// for i <= int(math.Sqrt(float64(n))) { == Same as current code
+		// for i <= int(math.Sqrt(float64(n))) { // Same as current code
 
-		for float64(i) < math.Sqrt(float64(n)) {
+		//for float64(i) < math.Sqrt(float64(n)) { // Same as current code
+		for i*i <= n {
 			if n%i == 0 {
 				isPrime = false
 				break // first divisor, loop break
