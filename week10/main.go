@@ -24,24 +24,23 @@ func main() {
 		log.Fatal()
 	}
 
-	// counts := 0
-	var isPrime bool = true // int->bool | counts -> isPrime
+	var isPrime bool = true
 	if n <= 1 {
-		// counts = -1
-		isPrime = false // readability
+
+		isPrime = false
 	} else {
 		i := 2
 		for i < n {
 			if n%i == 0 {
-				// counts = counts + 1
-				isPrime = false // +, remove
+				isPrime = false
+				break // first divisor, loop break
 			}
+			fmt.Printf("%d ", i)
 			i++
 		}
 	}
 
-	// if counts == 0 {
-	if isPrime { // ==, remove
+	if isPrime {
 		fmt.Printf("%d is a Prime Number.", n)
 	} else {
 		fmt.Printf("%d not a Prime Number.", n)
