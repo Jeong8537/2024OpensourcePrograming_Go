@@ -37,28 +37,37 @@ func isPrime(n int) bool {
 
 // output
 // 11 13 17 19
-func getInteger() int {
+func getInteger() (int, error) {
 	in := bufio.NewReader(os.Stdin)
 	a, err := in.ReadString('\n')
 
 	if err != nil {
-		log.Fatal(err)
+		// log.Fatal(err)
+		return 0, err
 	}
 
 	a = strings.TrimSpace(a)
 	number, err := strconv.Atoi(a)
 	if err != nil {
-		log.Fatal()
+		// log.Fatal()
+		return 0, err
 	}
-	return number
+	return number, nil
 }
 
 func main() {
 	fmt.Print("Start Number : ")
-	n1 := getInteger()
+	n1, err := getInteger()
+	if err != nil {
+		log.Fatal(err)
+		// return 0, err
+	}
 	fmt.Print("End Number : ")
-	n2 := getInteger()
-
+	n2, err := getInteger()
+	if err != nil {
+		log.Fatal(err)
+		// return 0, err
+	}
 	for i := n1; i < n2; i++ {
 		if isPrime(i) {
 			fmt.Printf("%d ", i)
