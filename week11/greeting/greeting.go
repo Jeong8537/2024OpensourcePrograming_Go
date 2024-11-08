@@ -11,7 +11,7 @@ func hi(name string) {
 func hello(name string) {
 	fmt.Printf("Hello %s~\n", name)
 }
-func EnglishGreetings(name string) {
-	hello(name)
-	hi(name)
+func EnglishGreetings(name1 string, name2 string) {
+	hello(name2)
+	hi(name1)
 }
