@@ -1,9 +1,11 @@
 package main
 
-import "week11/greeting"
+import (
+	"fmt"
+	"week11/keyboard"
+)
 
 func main() {
-	// greeting.Hello("Inha")
-	// greeting.Hi("Harvard")
-	greeting.EnglishGreetings("Inha", "Harvard")
+	n, _ := keyboard.GetFloat()
+	fmt.Println(n)
 }
