@@ -2,47 +2,26 @@ package main
 
 import (
 	"fmt"
-	"time"
+	"reflect"
 )
 
 func main() {
-	// var dates [3]time.Time
-	// dates[0] = time.Unix(0, 0)
-	// dates[2] = time.Unix(1708012346, 0) // Unix Time, Zero Value, 2024-02-16
-	// fmt.Println(dates[0], dates[1], dates[2])
+	// array slicing -> create slice
+	// gpas := [5]float64{3.5, 4.1, 4.5, 3.9, 4.23} // array := array literal
+	// fmt.Println(gpas, reflect.TypeOf(gpas))
+	// gpaSlice := gpas[1:4] // slice := slicing array
+	// fmt.Println(gpaSlice, reflect.TypeOf(gpaSlice))
 
-	// var dates [3]time.Time = [3]time.Time(time.Unix(0, 0), time.Unix(1, 0), time.Unix(1708012346, 0))
-	// fmt.Println(dates[0], dates[1], dates[2])
+	// array slicing make
+	gpaSlice := []float64{4.1, 4.5, 3.9}
+	fmt.Println(gpaSlice, reflect.TypeOf(gpaSlice))
 
-	//dates := [3]time.Time{time.Unix(0, 0), time.Unix(1, 0), time.Unix(1708012346, 0)}
-	//fmt.Println(dates[0], dates[1], dates[2])
+	// make() function
+	gpaSlice1 := make([]float64, 3)
+	gpaSlice1[0] = 4.1
+	gpaSlice1[1] = 4.5
+	gpaSlice1[2] = 3.9
 
-	// dates := [3]time.Time{
-	// 	time.Unix(0, 0),
-	// 	time.Unix(1, 0),
-	// 	time.Unix(1708012346, 0),
-	// }
-	// fmt.Println(dates[0], dates[1], dates[2])
+	fmt.Println(gpaSlice1, reflect.TypeOf(gpaSlice1))
 
-	dates := [3]time.Time{
-		time.Unix(0, 0),
-		time.Unix(1, 0),
-		time.Unix(1708012346, 0)}
-
-	// fmt.Println(dates[0], dates[1], dates[2])
-	// fmt.Println(dates)         // array
-	// fmt.Printf("%#v\n", dates) //array literal
-	// for i := 0; i <= 2; i++{
-
-	// for i := 0; i < len(dates); i++ {
-	// 	fmt.Printf("[%d] ", i)
-	// 	fmt.Println(dates[i])
-	// }
-	for i, date := range dates { // like python for in, SAFE
-		fmt.Println(i, date)
-	}
-	fmt.Printf("\n")
-	for _, date := range dates { // like python for in, SAFE
-		fmt.Println(date)
-	}
 }
