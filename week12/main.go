@@ -29,7 +29,20 @@ func main() {
 		time.Unix(1, 0),
 		time.Unix(1708012346, 0)}
 
-	fmt.Println(dates[0], dates[1], dates[2])
-	fmt.Println(dates)         // array
-	fmt.Printf("%#v\n", dates) //array literal
+	// fmt.Println(dates[0], dates[1], dates[2])
+	// fmt.Println(dates)         // array
+	// fmt.Printf("%#v\n", dates) //array literal
+	// for i := 0; i <= 2; i++{
+
+	// for i := 0; i < len(dates); i++ {
+	// 	fmt.Printf("[%d] ", i)
+	// 	fmt.Println(dates[i])
+	// }
+	for i, date := range dates { // like python for in, SAFE
+		fmt.Println(i, date)
+	}
+	fmt.Printf("\n")
+	for _, date := range dates { // like python for in, SAFE
+		fmt.Println(date)
+	}
 }
