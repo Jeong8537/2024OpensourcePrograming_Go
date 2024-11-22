@@ -1,0 +1,13 @@
+package main
+
+import "fmt"
+
+func main() {
+	gpas := [5]float64{3.5, 4.1, 4.5, 3.9, 4.23}
+	gpa_slice := gpas[1:4] // under array
+	//gpa_slice[1] = 2.71
+	gpas[2] = 2.71
+	//gpa_slice = append(gpa_slice, 4.3)
+	gpa_slice = append(gpa_slice, 4.3, 5.55) // current under array not change | new space -> new under array
+	fmt.Println(len(gpa_slice), gpa_slice, len(gpas), gpas)
+}
