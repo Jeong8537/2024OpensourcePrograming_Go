@@ -3,6 +3,10 @@ package main
 import "fmt"
 
 func main() {
+	var emptySlice []bool
+	//emptySlice = make([]bool, 5)
+	fmt.Printf("%#v\n\n", emptySlice) // slice zero value(nil)
+
 	gpas := [5]float64{3.5, 4.1, 4.5, 3.9, 4.23}
 	gpa_slice := gpas[1:4] // under array
 	//gpa_slice[1] = 2.71
