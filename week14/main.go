@@ -2,24 +2,39 @@ package main
 
 import "fmt"
 
-func main() {
-	var student struct {
-		id   int
-		name string
-		gpa  float32
-	}
-	student.id = 202444057
-	student.name = "Jeong Jang Hyeon"
-	student.gpa = 3.0
-	fmt.Println(student.gpa)
+type visitor struct {
+	age  int
+	cost int
+}
 
-	var student2 struct {
-		id   int
-		name string
-		gpa  float32
+func totalCost(visitors []visitor) int {
+	total := 0
+	for _, v := range visitors {
+		total = total + v.cost
 	}
-	student2.id = 202444001
-	student2.name = "Son Heungmin"
-	student2.gpa = 4.5
-	fmt.Println(student2.gpa)
+	return total
+}
+
+func main() {
+	var numVisitor int
+	fmt.Printf("How many people? | [input] : ")
+	fmt.Scanln(&numVisitor)
+
+	vs := make([]visitor, numVisitor)
+
+	for i := 0; i < numVisitor; i++ {
+		age := 0
+		fmt.Print("How old are you? | [input] : ")
+		fmt.Scanln(&age)
+
+		switch {
+		case age < 12:
+			vs[i] = visitor{age: age, cost: 5000}
+		case age >= 12 && age < 65:
+			vs[i] = visitor{age: age, cost: 10000}
+		default:
+			vs[i] = visitor{age: age, cost: 7000}
+		}
+	}
+	fmt.Printf("total price is %d won.", totalCost(vs))
 }
