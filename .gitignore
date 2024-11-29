@@ -2,3 +2,4 @@ go.mod
 main.exe
 go.sum
 *.gitignore
+*.txt
